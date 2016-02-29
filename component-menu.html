@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .menu-container{
+      width: 300px;
+      height: 100%;
+      background-color: #DE7B7B;
+      position: fixed;
+      right: 0;
+      top: 0;
+      -webkit-transform: translateX(300px);
+      transform: translateX(300px);
+      transition: all .6s cubic-bezier(.19, 1, .22, 1);
+    }
+    .menu-container.open{
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    .menu-open{
+      position: absolute;
+      right: 185px;
+      top: 25px;
+      z-index: 10;
+      text-decoration: none;
+      padding: .5em 1.2em;
+      color: #4A3F3F;
+      border: 1px solid #4A3F3F;
+      border-radius: 4px;
+      transition: all .3s
+    }
+    .menu-open:hover{
+      color: #fff;
+      background-color: #4A3F3F;
+    }
+    .menu-close{
+      display: block;
+      position: absolute;
+      top: 24px;
+      right: 10px;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+    }
+    .menu-close:before{
+      content: "";
+      display: block;
+      width: 20px;
+      height: 1px;
+      background-color: #4A3F3F;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    .menu-close:after{
+      content: "";
+      display: block;
+      width: 20px;
+      height: 1px;
+      background-color: #4A3F3F;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    .menu-close:hover:before{
+      background-color: #ddd;
+    }
+    .menu-close:hover:after{
+      background-color: #ddd;
+    }
+    .menu-close span{
+      display: none;
+    }
+    .navigation{
+      padding-top: 100px;
+    }
+    .navigation-link{
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      transition: all .3s;
+    }
+    .navigation-link:hover{
+      color: #ddd;
+      background-color: #D26E6E;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="#" class="menu-open">MENU</a>
+    <div class="menu-container">
+      <a href="#" class="menu-close">
+        <span>close</span>
+      </a>
+      <ul class="navigation">
+        <li><a class="navigation-link" href="javascript:;">link</a></li>
+        <li><a class="navigation-link" href="javascript:;">link</a></li>
+        <li><a class="navigation-link" href="javascript:;">link</a></li>
+        <li><a class="navigation-link" href="javascript:;">link</a></li>
+        <li><a class="navigation-link" href="javascript:;">link</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.menu-open').click(function(){
+        $('.menu-container').addClass('open');
+      })
+      $('.menu-close').click(function(){
+        $('.menu-container').removeClass('open');
+      })
+    })  
+
+  </script>
+</body>
+</html>
