@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    label{
+      cursor: pointer;
+    }
+    input{
+      display: none;
+    }
+    div{
+      width: 350px;
+      height: 0;
+      background-color: #d01;
+      overflow: hidden;
+      -webkit-transition: height .3s ease-in-out, padding .3s ease-in-out;
+      -moz-transition: height .3s ease-in-out, padding .3s ease-in-out;
+      -ms-transition: height .3s ease-in-out, padding .3s ease-in-out;
+      -o-transition: height .3s ease-in-out, padding .3s ease-in-out;
+      transition: height .3s ease-in-out, padding .3s ease-in-out;
+    }
+    #check:checked + div{
+      height: 100px;
+      padding: 1em;
+    }
+    #check2:checked + div{
+      height: 100px;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <label for="check">問題一： SpaceX降落成功？</label>
+  <input type="checkbox" id="check">
+  <div>
+    美國科技網站《The Verge》認為，SpaceX證明獵鷹九號成功降落海上平台並非偶然。報導指出，此次任務離地面非常高，加上重返地球溫度相當高，所以SpaceX預期獵鷹九號不可能成功降落，但結果喜出望外，發射解說員興奮地宣布「火箭降落了！」
+  </div>
+  
+  <br>
+
+  <label for="check2">問題二： SpaceX價格？</label> 
+  <input type="checkbox" id="check2">
+  <div>
+    路透》報導，這已經是SpaceX的火箭第二次成功降落在海上，擁有SpaceX的特斯拉（Tesla）執行長穆斯克（Elon Musk）想要藉由回收火箭，提供價格較低的發射服務。
+  </div>
+</body>
+</html>
